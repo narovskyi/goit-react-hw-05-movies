@@ -45,6 +45,7 @@ export const FilmCard = styled.li`
     transition-duration: 300ms;
     &:hover {
         transform: scale(1.05);
-        box-shadow: 0px 5px 14px 4px rgba(160,108,217,0.5);
+        // box-shadow: 0px 5px 14px 4px rgba(160,108,217,0.5);
+        box-shadow: 0px 1px 6px 0px rgba(25,5,48,0.28);
     }
 `;

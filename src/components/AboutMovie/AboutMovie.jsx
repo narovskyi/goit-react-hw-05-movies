@@ -1,4 +1,4 @@
-import { Container, Image, Subtitle, Title, VoteAverage, Overview } from "./AboutMovie.styled";
+import { Container, Image, Subtitle, Title, Highlight, Overview, Paragraph } from "./AboutMovie.styled";
 
 export default function AboutMovie({ movie: { title, overview, genres, vote_average, vote_count }, imageUrl }) {
     
@@ -7,10 +7,10 @@ export default function AboutMovie({ movie: { title, overview, genres, vote_aver
             <Image src={imageUrl} alt="" />
             <div>
                 <Title>{title}</Title>
-                <p><Subtitle>Avarage rating:</Subtitle> <VoteAverage>{vote_average}</VoteAverage> ({vote_count})</p>
-                <p><Subtitle>Overview:</Subtitle></p>
+                <Paragraph><Subtitle>Avarage rating:</Subtitle> <Highlight>{vote_average}</Highlight> ({vote_count})</Paragraph>
+                <Paragraph><Subtitle>Overview:</Subtitle></Paragraph>
                 <Overview>{overview}</Overview>
-                <p><Subtitle>Genres:</Subtitle></p> <ul>{genres && genres.map(genre => (<li key={genre.id}>{genre.name}</li>))}</ul>
+                <Paragraph><Subtitle>Genres:</Subtitle> {genres && genres.map(genre => (<Highlight key={genre.id}>{genre.name}</Highlight>))}</Paragraph>
             </div>
         </Container>
     );
