@@ -25,7 +25,7 @@ export default function TrendingMovies() {
     return (
         <Container>
             <Title>Trending Today</Title>
-            {trendingMovies && <MoviesList title='Trending Today' movies={trendingMovies} />}
+            {trendingMovies && <MoviesList path={`movies/`} movies={trendingMovies} />}
             {isError && <Title>Sorry, something went wrong...</Title>}
         </Container>
     );

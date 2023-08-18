@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import noImage from '../../images/no-image.jpg';
 
 export const Container = styled.div`
     display: flex;
@@ -11,8 +12,11 @@ export const Image = styled.img`
     display: block;
     margin-right: 30px;
     border-radius: 10px;
-    // box-shadow: 0px 0px 14px 4px rgba(160,108,217,0.5);
     box-shadow: 0px 1px 6px 0px rgba(25,5,48,0.5);
+    min-width: 300px;
+    min-height: 450px;
+    background-image: url(${noImage});
+    background-size: cover;
 `;
 
 export const Title = styled.h1`

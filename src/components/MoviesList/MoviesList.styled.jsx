@@ -1,8 +1,13 @@
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+import noImage from '../../images/no-image.jpg';
 
 export const Image = styled.img`
     display: block;
+    min-width: 200px;
+    min-height: 300px;
+    background-image: url(${noImage});
+    background-size: cover;
 `;
 
 export const MovieTitle = styled.h3`
