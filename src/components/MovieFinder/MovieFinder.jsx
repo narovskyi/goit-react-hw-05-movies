@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import searchIcon from "../../images/search.svg";
+import { SearchIcon, SearchButton, SearchForm } from "./MovieFinder.styled";
+
+
 
 export default function MovieFinder({setMovies}) {
     const [movieTitle, setMovieTitle] = useState('');
@@ -37,10 +41,14 @@ export default function MovieFinder({setMovies}) {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <button type="submit">
-                    <>Search</>
-                </button>
+            <SearchForm onSubmit={handleSubmit}>
+                <SearchButton type="submit">
+                    <svg width="20px" height="20px">
+                        <use href={searchIcon}>
+                        </use>
+                    </svg>
+                    <SearchIcon src={searchIcon} alt='Search'/>
+                </SearchButton>
 
                 <input
                     type="text"
@@ -50,7 +58,7 @@ export default function MovieFinder({setMovies}) {
                     value={movieTitle}
                     onChange={handleInputChange}
                 />
-            </form>
+            </SearchForm>
         </>
     );
 }
