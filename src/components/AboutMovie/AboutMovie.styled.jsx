@@ -1,11 +1,15 @@
 import { styled } from "styled-components";
 import noImage from '../../images/no-image.jpg';
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
-    display: flex;
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 30px;
+`;
+
+export const FlexContainer = styled.div`
+    display: flex;
 `;
 
 export const Image = styled.img`
@@ -44,8 +48,13 @@ export const Highlight = styled.span`
     &:not(:last-child) {
         margin-right: 10px;
     }
+    margin-bottom: 5px;
 `;
 
 export const Paragraph = styled.p`
-    line-height: 25px;
+    line-height: 25px;    
+`;
+
+export const InformationLink = styled(NavLink)`
+    color: red;
 `;

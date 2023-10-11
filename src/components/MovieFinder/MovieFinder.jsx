@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import searchIcon from "../../images/search.svg";
-import { SearchIcon, SearchButton, SearchForm } from "./MovieFinder.styled";
-
-
+import { Input, SearchButton, SearchForm } from "./MovieFinder.styled";
+import { AiOutlineSearch } from 'react-icons/ai';
 
 export default function MovieFinder({setMovies}) {
     const [movieTitle, setMovieTitle] = useState('');
@@ -43,14 +41,10 @@ export default function MovieFinder({setMovies}) {
         <>
             <SearchForm onSubmit={handleSubmit}>
                 <SearchButton type="submit">
-                    <svg width="20px" height="20px">
-                        <use href={searchIcon}>
-                        </use>
-                    </svg>
-                    <SearchIcon src={searchIcon} alt='Search'/>
+                    <AiOutlineSearch />
                 </SearchButton>
 
-                <input
+                <Input
                     type="text"
                     autoComplete="off"
                     autoFocus
