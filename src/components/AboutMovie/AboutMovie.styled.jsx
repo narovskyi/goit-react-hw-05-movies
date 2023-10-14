@@ -56,5 +56,18 @@ export const Paragraph = styled.p`
 `;
 
 export const InformationLink = styled(NavLink)`
-    color: red;
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    border: 3px solid #190530;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #190530;
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+    &.active {
+        background-color: #9c7cbf;
+    }
 `;

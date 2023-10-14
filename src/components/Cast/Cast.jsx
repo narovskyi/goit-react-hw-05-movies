@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ActorCard from "components/ActorCard";
+import { Notification, CardList } from "./Cast.styled";
 
 export default function Cast() {
     const { id } = useParams();
@@ -23,25 +24,19 @@ export default function Cast() {
             });
     }, [id]);
 
-
-    // return (
-    //     <Container>
-    //         <Title>Trending Today</Title>
-    //         {trendingMovies && <MoviesList path={`movies/`} movies={trendingMovies} />}
-    //         {isError && <Title>Sorry, something went wrong...</Title>}
-    //     </Container>
-    // );
-
     return (
         <>
-            {actors && actors.map(({ id, name, character, profile_path }) =>
-                <ActorCard
-                    key={id}
-                    name={name}
-                    character={character}
-                    photoPath={profile_path}
-                />
-            )} 
-        </>
+            <CardList>
+                {actors && actors.map(({ id, name, character, profile_path }) =>
+                    <ActorCard
+                        key={id}
+                        name={name}
+                        character={character}
+                        photoPath={profile_path}
+                    />
+                )}
+            </CardList>
+            {isError && <Notification>Sorry, something went wrong...</Notification>}
+        </>     
     );
 }

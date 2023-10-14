@@ -10,8 +10,7 @@ export default function MovieDetails() {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=b6e502cbaaa880d060a13b6a3192abd0&language=en-US`)
             .then(response => response.json())
-            .then(response => { 
-                // console.log(response);
+            .then(response => {
                 setMovieObj(response);
                 setImageUrl(`https://image.tmdb.org/t/p/w300/${response.poster_path}`);
             })

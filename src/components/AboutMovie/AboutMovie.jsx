@@ -15,7 +15,7 @@ export default function AboutMovie({ movie: { title, overview, genres, vote_aver
                 <Paragraph><Subtitle>Overview:</Subtitle></Paragraph>
                 <Overview>{overview}</Overview>
                 <Paragraph><Subtitle>Genres:</Subtitle> {genres && genres.map(genre => (<Highlight key={genre.id}>{genre.name}</Highlight>))}</Paragraph>
-                <InformationLink to='cast'>CAST</InformationLink>
+                <InformationLink to='cast'>Cast</InformationLink>
                 <InformationLink to='reviews'>Reviews</InformationLink>
             </div>
             </FlexContainer>
