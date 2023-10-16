@@ -12,8 +12,7 @@ export const Navigation = styled.nav`
     list-style: none;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 100px;
-    margin-right: auto;
+    padding-left: 100px;
 `;
 
 export const StyledLink = styled(NavLink)`

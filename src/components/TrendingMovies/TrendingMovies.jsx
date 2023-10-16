@@ -23,10 +23,10 @@ export default function TrendingMovies() {
     }, [])
 
     return (
-        <Container>
+        <>
             <Title>Trending Today</Title>
             {trendingMovies && <MoviesList path={`movies/`} movies={trendingMovies} />}
             {isError && <Title>Sorry, something went wrong...</Title>}
-        </Container>
+        </>
     );
 }

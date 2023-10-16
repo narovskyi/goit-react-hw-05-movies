@@ -1,8 +1,4 @@
-import { styled } from "styled-components";
-
-export const Container = styled.div`
-    margin: 0 100px;
-`;
+import { styled } from "styled-components"; 
 
 export const Title = styled.h1`
     color: #190530;

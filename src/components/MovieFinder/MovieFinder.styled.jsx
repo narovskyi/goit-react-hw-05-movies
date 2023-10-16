@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    
-`;
-
 export const SearchButton = styled.button`
     display: block;
     border-right: none;

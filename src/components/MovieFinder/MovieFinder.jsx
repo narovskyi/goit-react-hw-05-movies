@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { Input, SearchButton, SearchForm } from "./MovieFinder.styled";
 import { AiOutlineSearch } from 'react-icons/ai';
+import { useSearchParams } from "react-router-dom";
 
 export default function MovieFinder({setMovies}) {
     const [movieTitle, setMovieTitle] = useState('');
-    const [query, setQuery] = useState();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [query, setQuery] = useState(searchParams.get("query"));
 
     const handleInputChange = (e) => {
         setMovieTitle(e.target.value);
+        setSearchParams({query: e.target.value})
     }
 
     const handleSubmit = (e) => {

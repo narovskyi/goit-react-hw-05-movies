@@ -3,8 +3,6 @@ import noImage from '../../images/no-image.jpg';
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
-    margin-left: 100px;
-    margin-right: 100px;
     margin-top: 30px;
 `;
 
