@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import AboutMovie from "components/AboutMovie";
+import BackButton from "components/BackButton";
 
 export default function MovieDetails() {
     const { id }  = useParams();
     const [movieObj, setMovieObj] = useState({});
     const [imageUrl, setImageUrl] = useState('');
+    const location = useLocation();
+    const backLinkHref = location.state?.from ?? '/';
+    console.log(location);
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=b6e502cbaaa880d060a13b6a3192abd0&language=en-US`)
@@ -19,6 +23,7 @@ export default function MovieDetails() {
     
     return (
         <>
+            <BackButton pathTo={backLinkHref} />
             <AboutMovie movie={movieObj} imageUrl={imageUrl}/>
         </>
         

@@ -3,7 +3,7 @@ import noImage from '../../images/no-image.jpg';
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
-    margin-top: 30px;
+    margin-top: 20px;
 `;
 
 export const FlexContainer = styled.div`
@@ -67,5 +67,8 @@ export const InformationLink = styled(NavLink)`
     }
     &.active {
         background-color: #9c7cbf;
+    }
+    &:hover { 
+        box-shadow: 0px 1px 6px 0px rgba(25,5,48,0.28);
     }
 `;

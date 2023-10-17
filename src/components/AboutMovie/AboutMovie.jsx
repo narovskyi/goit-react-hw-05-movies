@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
 import { Container, Image, Subtitle, Title, Highlight, Overview, Paragraph, InformationLink, FlexContainer } from "./AboutMovie.styled";
+import Loader from "components/Loader/Loader";
 
 
 export default function AboutMovie({ movie: { title, overview, genres, vote_average, vote_count }, imageUrl }) {
     
     return (
-        <>
-            <Container>
+        <Container>
             <FlexContainer>
             <Image src={imageUrl} alt="" />
             <div>
@@ -19,8 +20,9 @@ export default function AboutMovie({ movie: { title, overview, genres, vote_aver
                 <InformationLink to='reviews'>Reviews</InformationLink>
             </div>
             </FlexContainer>
-            <Outlet />
+            <Suspense fallback={<Loader />}>
+                    <Outlet />
+            </Suspense>    
         </Container>
-        </>
     );
 }

@@ -17,9 +17,8 @@ export default function MovieFinder({setMovies}) {
         e.preventDefault();
         setQuery(movieTitle.trim());
     }
-
     useEffect(() => {
-        if (query === undefined || query === '') {
+        if (query === undefined || query === '' || query === null) {
             // console.log(query);
             return;
         }
