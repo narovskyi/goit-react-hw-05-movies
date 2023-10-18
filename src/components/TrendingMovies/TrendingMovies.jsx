@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Title } from "./TrendingMovies.styled";
+import { Title } from "./TrendingMovies.styled";
 import MoviesList from "components/MoviesList";
 
 export default function TrendingMovies() {
