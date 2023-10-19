@@ -1,4 +1,6 @@
 import { Card, Name, Character, Image } from "./ActorCard.styled";
+import PropTypes from 'prop-types';
+
 
 export default function ActorCard({ name, character, photoPath }) {
     return (
@@ -9,3 +11,9 @@ export default function ActorCard({ name, character, photoPath }) {
         </Card>
     );
 }
+
+ActorCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    character: PropTypes.string,
+    photoPath: PropTypes.string
+};

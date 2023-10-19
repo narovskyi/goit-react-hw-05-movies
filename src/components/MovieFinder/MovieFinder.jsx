@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Input, SearchButton, SearchForm } from "./MovieFinder.styled";
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useSearchParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 export default function MovieFinder({setMovies}) {
     const [movieTitle, setMovieTitle] = useState('');
@@ -25,10 +26,11 @@ export default function MovieFinder({setMovies}) {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=b6e502cbaaa880d060a13b6a3192abd0&query=${query}&include_adult=false&language=en-US&page=1`)
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 // if (!response.success) {
                 //     setIsError(response.status_message);                   
                 // }
+                // Make ERROR and edit button and input border
                 setMovies(response.results);
             })
             .catch(err => {
@@ -58,3 +60,7 @@ export default function MovieFinder({setMovies}) {
         </>
     );
 }
+
+MovieFinder.propTypes = {
+    setMovies: PropTypes.func.isRequired
+};

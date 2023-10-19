@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Author, Review, ReviewList, Content, Notification } from "./Reviews.styled";
 
-export default function Cast() {
+export default function Reviews() {
     const { id } = useParams();
     const [reviews, setReviews] = useState();
     const [isError, setIsError] = useState();

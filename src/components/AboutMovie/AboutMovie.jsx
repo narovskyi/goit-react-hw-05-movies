@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import { Container, Image, Subtitle, Title, Highlight, Overview, Paragraph, InformationLink, FlexContainer } from "./AboutMovie.styled";
 import Loader from "components/Loader/Loader";
+import PropTypes from 'prop-types';
 
 
 export default function AboutMovie({ movie: { title, overview, genres, vote_average, vote_count }, imageUrl }) {
@@ -26,3 +27,8 @@ export default function AboutMovie({ movie: { title, overview, genres, vote_aver
         </Container>
     );
 }
+
+AboutMovie.propTypes = {
+    movie: PropTypes.object.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+};
