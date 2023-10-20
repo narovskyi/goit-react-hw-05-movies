@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Input, SearchButton, SearchForm } from "./MovieFinder.styled";
+import { BorderWrap, Input, SearchButton, SearchForm } from "./MovieFinder.styled";
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useSearchParams } from "react-router-dom";
 import PropTypes from 'prop-types';
@@ -30,7 +30,7 @@ export default function MovieFinder({setMovies}) {
                 // if (!response.success) {
                 //     setIsError(response.status_message);                   
                 // }
-                // Make ERROR and edit button and input border
+                // Make ERROR
                 setMovies(response.results);
             })
             .catch(err => {
@@ -44,18 +44,20 @@ export default function MovieFinder({setMovies}) {
     return (
         <>
             <SearchForm onSubmit={handleSubmit}>
-                <SearchButton type="submit">
-                    <AiOutlineSearch />
-                </SearchButton>
+                <BorderWrap>
+                    <SearchButton type="submit">
+                        <AiOutlineSearch />
+                    </SearchButton>
+                    <Input
+                        type="text"
+                        autoComplete="off"
+                        autoFocus
+                        placeholder="Search movie"
+                        value={movieTitle}
+                        onChange={handleInputChange}
+                    />
+                </BorderWrap>
 
-                <Input
-                    type="text"
-                    autoComplete="off"
-                    autoFocus
-                    placeholder="Search movie"
-                    value={movieTitle}
-                    onChange={handleInputChange}
-                />
             </SearchForm>
         </>
     );

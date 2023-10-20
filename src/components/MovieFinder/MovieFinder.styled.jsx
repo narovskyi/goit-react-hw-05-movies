@@ -5,8 +5,7 @@ export const SearchButton = styled.button`
     border-right: none;
     background-color: #fceaff;
     border-radius: 10px 0px 0px 10px;
-    border: 3px solid #a06cd9;
-    border-right: none;
+    border: none;
     cursor: pointer;
     svg {
         display: block;
@@ -26,8 +25,7 @@ export const Input = styled.input`
     height: 40px;
     width: 300px;
     border-radius: 0px 10px 10px 0px;
-    border: 3px solid #a06cd9;
-    border-left: none;
+    border: none;
     background-color: #fceaff;
     &:focus-visible {
         outline: none;
@@ -39,4 +37,10 @@ export const SearchForm = styled.form`
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+`;
+
+export const BorderWrap = styled.div`
+    display: flex;
+    border: 3px solid #a06cd9;
+    border-radius: 10px;
 `;
