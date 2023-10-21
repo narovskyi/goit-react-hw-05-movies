@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 export default function MoviesList({ movies, path }) {
     const location = useLocation();
 
-    // console.log(location);
     return (
         <>
             {movies &&

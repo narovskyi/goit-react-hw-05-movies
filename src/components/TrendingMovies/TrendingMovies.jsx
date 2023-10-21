@@ -10,7 +10,6 @@ export default function TrendingMovies() {
         fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=b6e502cbaaa880d060a13b6a3192abd0&language=en-US')
             .then(response => response.json())
             .then(response => {
-                // console.log(response);
                 if (!response.success) {
                     setIsError(response.status_message);                   
                 }

@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { HeaderWrap, StyledLink, Navigation } from "./Header.styled";
 
 export default function Header() {
